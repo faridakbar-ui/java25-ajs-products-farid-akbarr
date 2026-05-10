@@ -12,10 +12,6 @@ type ProductType = {
   category: string;
 };
 
-type Category = {
-  name: string;
-  slug: string;
-};
 
 const productsDiv = document.querySelector("#products") as HTMLDivElement;
 const searchInput = document.querySelector("#search") as HTMLInputElement;
@@ -76,15 +72,15 @@ searchInput.addEventListener("input", () => {
 
 //kategorier
 const getCategories = async () => {
-  const response = await axios.get<Category[]>(
+  const response = await axios.get<string[]>(
     "https://dummyjson.com/products/categories"
   );
 
   response.data.forEach((cat) => {
     const option = document.createElement("option");
 
-    option.value = cat.slug;
-    option.innerText = cat.name;
+    option.value = cat;
+    option.innerText = cat;
 
     categorySelect.appendChild(option);
   });
