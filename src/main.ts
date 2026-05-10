@@ -76,6 +76,8 @@ const getCategories = async () => {
     "https://dummyjson.com/products/categories"
   );
 
+  categorySelect.innerHTML = `<option value="all">All categories</option>`;
+
   response.data.forEach((cat) => {
     const option = document.createElement("option");
 
