@@ -78,7 +78,7 @@ const getCategories = async () => {
 
   categorySelect.innerHTML = `<option value="all">All categories</option>`;
 
-  response.data.forEach((cat) => {
+  response.data.forEach((cat: string) => {
     const option = document.createElement("option");
 
     option.value = cat;
