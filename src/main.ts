@@ -104,5 +104,9 @@ categorySelect.addEventListener("change", () => {
 
 //start
 
-getProducts();
-getCategories();
+const init = async () => {
+  await getProducts();
+  await getCategories();
+};
+
+init();
